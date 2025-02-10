@@ -11,7 +11,7 @@ import Foundation
 public protocol OEPNVWalletPlugin {
     
     /// Die URL zum öffentlichen Git-Repository des Plugins, damit Benutzer den Quellcode überprüfen können.
-    var gitRepoURL: URL { get }
+    var gitRepositoryURL: URL { get }
     
     /// Der reale Name des Autors des Plugins.
     var authorName: String { get }
@@ -34,6 +34,9 @@ public protocol OEPNVWalletPlugin {
     ///
     /// Häufig haben Verkehrsverbünde neben Abo-Portalen zusätzlich auch Apps im App Store, die sich alle die gleichen Login-Daten teilen.
     var associationAuthURLs: [URL] { get }
+    
+    /// Eine Liste mit allen unterstützten Ticket-Arten, z.B. "Deutschlandticket".
+    var supportedTicketTypes: [String] { get }
     
     /// Die Art der Authentifizierung, die vom Verkehrsverbund genutzt wird.
     var authenticationType: OEPNVWalletPluginAuthType { get }
