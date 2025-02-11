@@ -13,7 +13,7 @@ public protocol OEPNVWalletPlugin {
     /// ÖPNV-Wallet initialisiert Plugins ausschließlich über `init()`.
     init()
     
-    /// Enthält die Informationen über das Plugin.
+    /// Enthält die notwendigen Informationen über das Plugin.
     var information: OEPNVWalletPluginInformation { get }
     
 }

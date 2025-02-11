@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Enthält alle notwendigen Informationen über das Plugin.
+/// Repräsentiert alle notwendigen (Meta-)Informationen über das Plugin.
 public struct OEPNVWalletPluginInformation {
     
     /// Die URL zum öffentlichen Git-Repository des Plugins, damit Benutzer den Quellcode überprüfen können.
@@ -41,7 +41,9 @@ public struct OEPNVWalletPluginInformation {
     /// Eine Liste mit allen unterstützten Ticket-Arten, z.B. "Deutschlandticket".
     public let supportedTickets: [String]
     
-    
+    // Notwendig, da explizit public:
+    // https://docs.swift.org/swift-book/documentation/the-swift-programming-language/accesscontrol/#Default-Memberwise-Initializers-for-Structure-Types
+    /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletPluginInformation` entnommen werden.
     public init(gitRepositoryURL: URL, authorName: String, authorURL: URL, associationName: String, associationAbbreviation: String, associationSpecialNotice: String? = nil, associationAuthURLs: [URL], associationAuthType: OEPNVWalletPluginAuthType, supportedTickets: [String]) {
         self.gitRepositoryURL = gitRepositoryURL
         self.authorName = authorName

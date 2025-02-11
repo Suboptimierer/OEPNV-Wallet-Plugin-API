@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Repräsentiert die Art, wie sich das Plugin beim Verkehrsverbund anmeldet.
+/// Repräsentiert die Art, wie sich das Plugin beim Verkehrsverbund authentifiziert.
 public enum OEPNVWalletPluginAuthType {
     
     /// Authentifizierung über E-Mail-Adresse und Passwort.
