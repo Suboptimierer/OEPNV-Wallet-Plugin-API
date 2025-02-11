@@ -41,4 +41,17 @@ public struct OEPNVWalletPluginInformation {
     /// Eine Liste mit allen unterstützten Ticket-Arten, z.B. "Deutschlandticket".
     public let supportedTickets: [String]
     
+    
+    public init(gitRepositoryURL: URL, authorName: String, authorURL: URL, associationName: String, associationAbbreviation: String, associationSpecialNotice: String? = nil, associationAuthURLs: [URL], associationAuthType: OEPNVWalletPluginAuthType, supportedTickets: [String]) {
+        self.gitRepositoryURL = gitRepositoryURL
+        self.authorName = authorName
+        self.authorURL = authorURL
+        self.associationName = associationName
+        self.associationAbbreviation = associationAbbreviation
+        self.associationSpecialNotice = associationSpecialNotice
+        self.associationAuthURLs = associationAuthURLs
+        self.associationAuthType = associationAuthType
+        self.supportedTickets = supportedTickets
+    }
+    
 }
