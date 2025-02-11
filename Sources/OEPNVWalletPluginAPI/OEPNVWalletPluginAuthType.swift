@@ -5,6 +5,8 @@
 //  Created by Jonas Sannewald on 10.02.25.
 //
 
+import Foundation
+
 /// Repräsentiert die Art, wie sich das Plugin beim Verkehrsverbund anmeldet.
 public enum OEPNVWalletPluginAuthType {
     
