@@ -8,7 +8,7 @@
 import Foundation
 
 /// Repräsentiert die Art, wie sich das Plugin beim Verkehrsverbund authentifiziert.
-public enum OEPNVWalletPluginAuthType: Codable {
+public enum OEPNVWalletPluginAuthType {
     
     /// Authentifizierung über E-Mail-Adresse und Passwort.
     case emailPassword
