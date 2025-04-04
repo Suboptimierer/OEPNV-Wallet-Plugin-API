@@ -16,4 +16,22 @@ public protocol OEPNVWalletPlugin {
     /// Enthält die notwendigen Informationen über das Plugin.
     var information: OEPNVWalletPluginInformation { get }
     
+    /// Testet die Authentifizierung beim Verkehrsverbund.
+    /// - Parameter credentials: Enthält die zur Authentifizierung notwendigen Daten als assoziierte Werte.
+    /// - Parameter client: Enthält die abstrahierte Client-API des Vapor-Frameworks, um HTTP-Requests zu senden.
+    /// - Returns: Liefert `true`, wenn die Authentifizierung erfolgreich war, andernfalls `false`.
+    func testAuthentication(
+        with credentials: OEPNVWalletPluginAuthCredentials,
+        using client: OEPNVWalletClient
+    ) throws -> Bool
+    
+    /// Fordert alle unterstützten Tickets beim Verkehrsverbund an.
+    /// - Parameter credentials: Enthält die zur Authentifizierung notwendigen Daten als assoziierte Werte.
+    /// - Parameter client: Enthält die abstrahierte Client-API des Vapor-Frameworks, um HTTP-Requests zu senden.
+    /// - Returns: Liste mit allen verfügbaren Tickets.
+    func fetchTickets(
+        with credentials: OEPNVWalletPluginAuthCredentials,
+        using client: OEPNVWalletClient
+    ) throws -> [OEPNVWalletPluginTicket]
+    
 }
