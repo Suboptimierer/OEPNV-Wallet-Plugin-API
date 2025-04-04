@@ -11,7 +11,7 @@ import Foundation
 ///  
 /// Es werden lediglich Überkategorien (z.B. Authentifizierung fehlgeschlagen) und nicht Unterkategorien (z.B. Anmeldedaten fehlerhaft) angeboten.
 /// Dadurch soll die Komplexität gering und OEPNVWalletPluginError übersichtlich gehalten werden.
-enum OEPNVWalletPluginError: Error {
+public enum OEPNVWalletPluginError: Error {
     
     /// Die Verbindung zum Verkehrsverbund ist fehlgeschlagen, z.B. weil die Server des Verkehrsverbunds nicht erreichbar sind.
     case connectionFailed(description: String)
