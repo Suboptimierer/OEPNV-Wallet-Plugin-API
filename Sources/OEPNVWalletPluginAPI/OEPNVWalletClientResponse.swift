@@ -19,4 +19,15 @@ public struct OEPNVWalletClientResponse {
     /// Repräsentiert den HTTP-Body, z.B. "{ name: 'swift' }".
     public let body: Data?
     
+    /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletClientResponse` entnommen werden.
+    public init(
+        status: Int,
+        headers: [String : String],
+        body: Data? = nil
+    ) {
+        self.status = status
+        self.headers = headers
+        self.body = body
+    }
+    
 }

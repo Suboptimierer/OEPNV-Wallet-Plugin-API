@@ -16,4 +16,13 @@ public struct OEPNVWalletPluginTicket {
     /// Der Scan-Code (z.B. Aztec-Code) Base64 kodiert.
     public let scanCode: String
     
+    /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletPluginTicket` entnommen werden.
+    public init(
+        type: String,
+        scanCode: String
+    ) {
+        self.type = type
+        self.scanCode = scanCode
+    }
+    
 }
