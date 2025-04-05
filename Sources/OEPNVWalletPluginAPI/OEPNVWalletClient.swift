@@ -13,8 +13,6 @@ public protocol OEPNVWalletClient {
     /// Sendet einen HTTP-Request über die darunterliegende Client-API des Vapor-Frameworks.
     /// - Parameter request: Das HTTP-Request-Objekt (siehe `OEPNVWalletClientRequest`), um den HTTP-Request auszuführen.
     /// - Returns: Das HTTP-Response-Objekt (siehe `OEPNVWalletClientResponse`), das den HTTP-Response repräsentiert.
-    func send<Req: Encodable, Res: Decodable>(
-        request: OEPNVWalletClientRequest<Req>
-    ) async throws -> OEPNVWalletClientResponse<Res>
+    func send(request: OEPNVWalletClientRequest) async throws -> OEPNVWalletClientResponse
     
 }

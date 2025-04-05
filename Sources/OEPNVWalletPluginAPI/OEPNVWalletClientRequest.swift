@@ -8,10 +8,10 @@
 import Foundation
 
 /// Repräsentiert einen HTTP-Request für die Abstraktionsschicht `OEPNVWalletClient`.
-public struct OEPNVWalletClientRequest<Body: Encodable> {
+public struct OEPNVWalletClientRequest {
     
     /// Repräsentiert die HTTP-Methode, z.B. "POST".
-    public let method: OEPNVWalletClientMethod
+    public let method: Method
     
     /// Repräsentiert die HTTP-Header, z.B. "content-type=application/json".
     public let headers: [String: String]?
@@ -22,11 +22,14 @@ public struct OEPNVWalletClientRequest<Body: Encodable> {
     /// Repräsentiert die Query-Parameter, z.B. "?language=de".
     public let query: [String: String]?
 
-    /// Repräsentiert den HTTP-Body als Swift-Encodable.
-    public let body: Body?
+    /// Repräsentiert den HTTP-Body, z.B. JSON-Daten.
+    ///
+    /// Der Content-Type wird NICHT automatisch gesetzt, damit maximale Flexibilität besteht.
+    /// Die Content-Length wird spätestens durch SwiftNIO berechnet, diese muss also nicht explizit gesetzt werden.
+    public let body: Data?
     
     /// Repräsentiert die HTTP-Methode innerhalb eines `OEPNVWalletClientRequest`.
-    public enum OEPNVWalletClientMethod: String {
+    public enum Method: String {
         
         /// Repräsentiert die HTTP-Methode "GET".
         case get = "GET"
@@ -47,11 +50,11 @@ public struct OEPNVWalletClientRequest<Body: Encodable> {
     
     /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletClientRequest` entnommen werden.
     public init(
-        method: OEPNVWalletClientMethod,
+        method: Method,
         headers: [String : String]? = nil,
         url: String,
         query: [String : String]? = nil,
-        body: Body? = nil
+        body: Data? = nil
     ) {
         self.method = method
         self.headers = headers

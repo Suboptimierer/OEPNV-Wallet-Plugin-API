@@ -7,8 +7,8 @@
 
 import Foundation
 
-/// Repräsentiert einen HTTP-Request für die Abstraktionsschicht `OEPNVWalletClient`.
-public struct OEPNVWalletClientResponse<Body: Decodable> {
+/// Repräsentiert einen HTTP-Response für die Abstraktionsschicht `OEPNVWalletClient`.
+public struct OEPNVWalletClientResponse {
     
     /// Repräsentiert den HTTP-Status-Code, z.B. 200 für OK.
     public let status: Int
@@ -16,14 +16,14 @@ public struct OEPNVWalletClientResponse<Body: Decodable> {
     /// Repräsentiert die HTTP-Header, z.B. "content-type=application/json".
     public let headers: [String: String]
     
-    /// Repräsentiert den HTTP-Body als Swift-Decodable.
-    public let body: Body?
+    /// Repräsentiert den HTTP-Body, z.B. JSON-Daten.
+    public let body: Data?
     
     /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletClientResponse` entnommen werden.
     public init(
         status: Int,
         headers: [String : String],
-        body: Body? = nil
+        body: Data? = nil
     ) {
         self.status = status
         self.headers = headers
