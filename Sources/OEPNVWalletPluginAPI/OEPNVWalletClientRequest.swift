@@ -8,7 +8,7 @@
 import Foundation
 
 /// Repräsentiert einen HTTP-Request für die Abstraktionsschicht `OEPNVWalletClient`.
-public struct OEPNVWalletClientRequest {
+public struct OEPNVWalletClientRequest<Body: Encodable> {
     
     /// Repräsentiert die HTTP-Methode, z.B. "POST".
     public let method: OEPNVWalletClientMethod
@@ -22,8 +22,8 @@ public struct OEPNVWalletClientRequest {
     /// Repräsentiert die Query-Parameter, z.B. "?language=de".
     public let query: [String: String]?
 
-    /// Repräsentiert den HTTP-Body, z.B. "{ name: 'swift' }".
-    public let body: Data?
+    /// Repräsentiert den HTTP-Body als Swift-Encodable.
+    public let body: Body?
     
     /// Repräsentiert die HTTP-Methode innerhalb eines `OEPNVWalletClientRequest`.
     public enum OEPNVWalletClientMethod: String {
@@ -51,7 +51,7 @@ public struct OEPNVWalletClientRequest {
         headers: [String : String]? = nil,
         url: String,
         query: [String : String]? = nil,
-        body: Data? = nil
+        body: Body? = nil
     ) {
         self.method = method
         self.headers = headers
