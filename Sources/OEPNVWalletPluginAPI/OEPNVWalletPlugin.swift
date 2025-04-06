@@ -23,7 +23,7 @@ public protocol OEPNVWalletPlugin {
     func testAuthentication(
         with credentials: OEPNVWalletPluginAuthCredentials,
         using client: OEPNVWalletClient
-    ) throws -> Bool
+    ) async throws -> Bool
     
     /// Fordert alle unterstützten Tickets beim Verkehrsverbund an.
     /// - Parameter credentials: Enthält die zur Authentifizierung notwendigen Daten als assoziierte Werte.
@@ -32,6 +32,6 @@ public protocol OEPNVWalletPlugin {
     func fetchTickets(
         with credentials: OEPNVWalletPluginAuthCredentials,
         using client: OEPNVWalletClient
-    ) throws -> [OEPNVWalletPluginTicket]
+    ) async throws -> [OEPNVWalletPluginTicket]
     
 }
