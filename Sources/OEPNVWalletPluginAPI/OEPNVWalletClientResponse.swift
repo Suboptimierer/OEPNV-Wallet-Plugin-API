@@ -14,7 +14,7 @@ public struct OEPNVWalletClientResponse {
     public let status: Int
     
     /// Repräsentiert die HTTP-Header, z.B. "content-type=application/json".
-    public let headers: [String: String]
+    public let headers: [(name: String, value: String)]
     
     /// Repräsentiert den HTTP-Body, z.B. JSON-Daten.
     public let body: Data?
@@ -22,7 +22,7 @@ public struct OEPNVWalletClientResponse {
     /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletClientResponse` entnommen werden.
     public init(
         status: Int,
-        headers: [String : String],
+        headers: [(name: String, value: String)],
         body: Data? = nil
     ) {
         self.status = status

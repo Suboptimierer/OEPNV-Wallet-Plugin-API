@@ -14,13 +14,13 @@ public struct OEPNVWalletClientRequest {
     public let method: Method
     
     /// Repräsentiert die HTTP-Header, z.B. "content-type=application/json".
-    public let headers: [String: String]?
+    public let headers: [(name: String, value: String)]?
     
     /// Repräsentiert die URL, z.B. "https://developer.apple.com/swift/".
     public let url: String
     
     /// Repräsentiert die Query-Parameter, z.B. "?language=de".
-    public let query: [String: String]?
+    public let query: [(name: String, value: String)]?
 
     /// Repräsentiert den HTTP-Body, z.B. JSON-Daten.
     ///
@@ -51,9 +51,9 @@ public struct OEPNVWalletClientRequest {
     /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletClientRequest` entnommen werden.
     public init(
         method: Method,
-        headers: [String : String]? = nil,
+        headers: [(name: String, value: String)]? = nil,
         url: String,
-        query: [String : String]? = nil,
+        query: [(name: String, value: String)]? = nil,
         body: Data? = nil
     ) {
         self.method = method
