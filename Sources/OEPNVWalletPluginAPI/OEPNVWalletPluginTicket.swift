@@ -13,7 +13,7 @@ public struct OEPNVWalletPluginTicket {
     /// Die ID des Tickets, die vom Verkehrsverbund vergeben wurde.
     ///
     /// Diese ID muss nicht global eindeutig sein, die Eindeutigkeit beim Verkehrsverbund reicht aus.
-    public let id: Int
+    public let id: String
     
     /// Der Typ des Tickets, z.B. Deutschlandticket.
     public let type: String
@@ -28,31 +28,31 @@ public struct OEPNVWalletPluginTicket {
     public let updateAvailable: Date
     
     /// Der Preis des Tickets.
-    public let price: Double
+    public let price: Double?
     
     /// Der vollständige Name des Inhabers des Tickets.
     let holder: String
     
     /// Das Geschlecht des Inhabers des Tickets.
-    let holderGender: String
+    let holderGender: String?
     
     /// Das Geburtsdatum des Inhabers des Tickets.
-    let holderBirthday: Date
+    let holderBirthday: Date?
     
     /// Der Scan-Code (z.B. Aztec-Code) Base64 kodiert.
     public let scanCode: String
     
     /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletPluginTicket` entnommen werden.
     public init(
-        id: Int,
+        id: String,
         type: String,
         validFrom: Date,
         validUntil: Date,
         updateAvailable: Date,
-        price: Double,
+        price: Double? = nil,
         holder: String,
-        holderGender: String,
-        holderBirthday: Date,
+        holderGender: String? = nil,
+        holderBirthday: Date? = nil,
         scanCode: String
     ) {
         self.id = id
