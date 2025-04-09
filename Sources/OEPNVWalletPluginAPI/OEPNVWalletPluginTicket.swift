@@ -31,13 +31,13 @@ public struct OEPNVWalletPluginTicket {
     public let price: Double?
     
     /// Der vollständige Name des Inhabers des Tickets.
-    let holder: String
+    public let holder: String
     
     /// Das Geschlecht des Inhabers des Tickets.
-    let holderGender: String?
+    public let holderGender: String?
     
     /// Das Geburtsdatum des Inhabers des Tickets.
-    let holderBirthday: Date?
+    public let holderBirthday: Date?
     
     /// Der Scan-Code (z.B. Aztec-Code) Base64 kodiert.
     public let scanCode: String
