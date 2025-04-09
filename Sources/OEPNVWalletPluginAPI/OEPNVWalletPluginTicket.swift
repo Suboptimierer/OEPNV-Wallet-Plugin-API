@@ -24,17 +24,11 @@ public struct OEPNVWalletPluginTicket {
     /// Das Datum, bis wann das Ticket gültig ist.
     public let validUntil: Date
     
-    /// Das Datum, ab wann das Ticket aktualisiert werden kann.
-    public let updateAvailable: Date
-    
     /// Der Preis des Tickets.
     public let price: Double?
     
     /// Der vollständige Name des Inhabers des Tickets.
     public let holder: String
-    
-    /// Das Geschlecht des Inhabers des Tickets.
-    public let holderGender: String?
     
     /// Das Geburtsdatum des Inhabers des Tickets.
     public let holderBirthday: Date?
@@ -48,10 +42,8 @@ public struct OEPNVWalletPluginTicket {
         type: String,
         validFrom: Date,
         validUntil: Date,
-        updateAvailable: Date,
         price: Double? = nil,
         holder: String,
-        holderGender: String? = nil,
         holderBirthday: Date? = nil,
         scanCode: String
     ) {
@@ -59,10 +51,8 @@ public struct OEPNVWalletPluginTicket {
         self.type = type
         self.validFrom = validFrom
         self.validUntil = validUntil
-        self.updateAvailable = updateAvailable
         self.price = price
         self.holder = holder
-        self.holderGender = holderGender
         self.holderBirthday = holderBirthday
         self.scanCode = scanCode
     }
