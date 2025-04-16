@@ -36,10 +36,27 @@ public struct OEPNVWalletPluginInformation {
     public let associationAuthURLs: [URL]
     
     /// Die Art der Authentifizierung, die vom Verkehrsverbund genutzt wird.
-    public let associationAuthType: OEPNVWalletPluginAuthType
+    public let associationAuthType: AuthType
     
     /// Eine Liste mit allen unterstützten Ticket-Arten, z.B. "Deutschlandticket".
     public let supportedTickets: [String]
+    
+    /// Repräsentiert die Art, wie sich das Plugin beim Verkehrsverbund authentifiziert.
+    public enum AuthType {
+        
+        /// Authentifizierung über E-Mail-Adresse und Passwort.
+        case emailPassword
+        
+        /// Authentifizierung über Benutzername und Passwort.
+        case usernamePassword
+        
+        /// Authentifizierung über E-Mail-Adresse und Passwort, zusätzlich 2. Faktor via TOTP.
+        case emailPasswordTOTP
+        
+        /// Authentifizierung über Benutzername und Passwort, zusätzlich 2. Faktor via TOTP.
+        case usernamePasswordTOTP
+        
+    }
     
     /// Die Bedeutung der Parameter können der Definition in `OEPNVWalletPluginInformation` entnommen werden.
     public init(
@@ -50,7 +67,7 @@ public struct OEPNVWalletPluginInformation {
         associationAbbreviation: String,
         associationSpecialNotice: String? = nil,
         associationAuthURLs: [URL],
-        associationAuthType: OEPNVWalletPluginAuthType,
+        associationAuthType: AuthType,
         supportedTickets: [String]
     ) {
         self.gitRepositoryURL = gitRepositoryURL
