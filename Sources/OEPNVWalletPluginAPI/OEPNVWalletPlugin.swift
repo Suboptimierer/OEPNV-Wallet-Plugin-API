@@ -16,6 +16,9 @@ public protocol OEPNVWalletPlugin {
     /// Enthält die notwendigen Informationen über das Plugin.
     var information: OEPNVWalletPluginInformation { get }
     
+    /// Enthält das Design des Plugins, welches in Apple Wallet verwendet wird.
+    var design: OEPNVWalletPluginDesign { get }
+    
     /// Testet die Authentifizierung beim Verkehrsverbund.
     /// - Parameter credentials: Enthält die zur Authentifizierung notwendigen Daten als assoziierte Werte.
     /// - Parameter client: Enthält die abstrahierte Client-API des Vapor-Frameworks, um HTTP-Requests zu senden.
