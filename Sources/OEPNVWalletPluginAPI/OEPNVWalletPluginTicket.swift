@@ -33,14 +33,14 @@ public struct OEPNVWalletPluginTicket {
     /// Das Geburtsdatum des Inhabers des Tickets.
     public let holderBirthday: Date?
     
-    /// Der Scan-Code des Tickets.
-    public let scanCode: ScanCode
+    /// Der Barcode des Tickets.
+    public let barcode: Barcode
     
-    /// Repräsentiert die Art, wie der Scan-Code vom Verkehrsverbund zur Verfügung gestellt wird.
-    public enum ScanCode {
+    /// Repräsentiert die Art, wie der Barcode vom Verkehrsverbund zur Verfügung gestellt wird.
+    public enum Barcode {
         
-        /// Repräsentiert ein Base64-enkodiertes Bild eines Aztec-Codes, der Binärdaten via ISO-8859-1 als Text enthält.
-        case base64AztecCodeWithISO88591Message(String)
+        /// Repräsentiert ein Base64-enkodiertes Bild eines Aztec-Codes.
+        case base64AztecCode(String)
         
     }
     
@@ -53,7 +53,7 @@ public struct OEPNVWalletPluginTicket {
         price: Double? = nil,
         holder: String,
         holderBirthday: Date? = nil,
-        scanCode: ScanCode
+        barcode: Barcode
     ) {
         self.id = id
         self.type = type
@@ -62,7 +62,7 @@ public struct OEPNVWalletPluginTicket {
         self.price = price
         self.holder = holder
         self.holderBirthday = holderBirthday
-        self.scanCode = scanCode
+        self.barcode = barcode
     }
     
 }
